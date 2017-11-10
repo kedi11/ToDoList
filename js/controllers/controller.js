@@ -12,6 +12,10 @@ angular.module("controller", [])
     $scope.vm = {};
 
     $scope.vm.tasks = TasksService.Tasks;
+
+    $scope.toggleComplete = function(task){
+        TasksService.toggleComplete(task);
+    }
     
 }])
 .service("UsersService", function(){
@@ -65,6 +69,12 @@ angular.module("controller", [])
             dateUpdated: new Date("2017-11-01T18:00:00")
         }
     ];
+
+    tasksService.toggleComplete = function(task){
+        if (task) {
+            task.isComplete = !task.isComplete;
+        }
+    }
 
     return tasksService;
 });

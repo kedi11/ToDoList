@@ -5,13 +5,13 @@
         <li class="list-group-item text-center clearfix"
             ng-repeat="task in vm.tasks">
             <!-- Toggle button -->
-            <button type="button" class="btn btn-sm pull-left"
+            <button type="button" class="btn btn-sm pull-left" ng-click="toggleComplete(task)"
                 ng-class="task.isComplete ? 'btn-success' : 'btn-info'">
                 <span class="glyphicon" ng-class="task.isComplete ? 'glyphicon-check' : 'glyphicon-unchecked'"></span>
             </button>
 
             <!-- Task text -->
-            <span style="font-weight:bold;">
+            <span style="font-weight:bold;" ng-class="{strike: task.isComplete}">
                 {{task.taskName | uppercase | limitTo: 20}}{{task.taskName.length > 20 ? "..." : ""}}
             </span>
 
