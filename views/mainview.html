@@ -11,7 +11,7 @@
             </button>
 
             <!-- Task text -->
-            <span style="font-weight:bold;">
+            <span style="font-weight:bold;" ng-class="{strike: task.isComplete}">
                 {{task.taskName | uppercase | limitTo: 20}}{{task.taskName.length > 20 ? "..." : ""}}
             </span>
 
