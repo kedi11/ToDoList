@@ -1,6 +1,6 @@
 /**
 *  app.js
-* Skeleton Angular app.js
+*  
 */
 
 // Create the main application module

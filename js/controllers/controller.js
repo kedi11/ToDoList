@@ -1,6 +1,6 @@
 /*
 *  controller.js
-* Skeleton Angular Controller (MVC)
+* 
 */
 
 angular.module("controller", [])
@@ -9,8 +9,8 @@ angular.module("controller", [])
 .controller("controller", ["$scope", "UsersService", "ListsService", "TasksService",
     function($scope, UsersService, ListsService, TasksService) {
     // Always create an object first and add properties/methods to it instead of $scope
-    $scope.object = {};
-    $scope.object.skeleton = "Angular, Bootstrap, and JQuery Skeleton";
+    $scope.vm = {};
+    
 }])
 .service("UsersService", function(){
     var usersService = {};
