@@ -10,8 +10,19 @@
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon glyphicon glyphicon-list" style="color:#428bca"></span>
+                    appname
+                </a>
+            </div>
+        </div>
+    </nav>
+
 <!-- Add ng-view to top-level tag for routing -->
-<div ng-view></div>
+<div class="container" ng-view></div>
 
 <script src="lib/jquery-3.2.1.min.js"></script>
 <script src="lib/bootstrap.min.js"></script>
