@@ -10,6 +10,8 @@ angular.module("controller", [])
     function($scope, UsersService, ListsService, TasksService) {
     // Always create an object first and add properties/methods to it instead of $scope
     $scope.vm = {};
+
+    $scope.vm.tasks = TasksService.Tasks;
     
 }])
 .service("UsersService", function(){
