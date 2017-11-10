@@ -1,1 +1,29 @@
 <!-- Application's primary Angular View (MVC) -->
+<div class="col-xs-12 col-sm-offset-2 col-sm-8">
+    <ul class="list-group">
+        <li class="list-group-item text-center clearfix" ng-show="vm.tasks.length == 0">NO TASKS IN LIST</li>
+        <li class="list-group-item text-center clearfix"
+            ng-repeat="task in vm.tasks">
+            <!-- Toggle button -->
+            <button type="button" class="btn btn-sm pull-left"
+                ng-class="task.isComplete ? 'btn-success' : 'btn-info'">
+                <span class="glyphicon" ng-class="task.isComplete ? 'glyphicon-check' : 'glyphicon-unchecked'"></span>
+            </button>
+
+            <!-- Task text -->
+            <span style="font-weight:bold;">
+                {{task.taskName | uppercase | limitTo: 20}}{{task.taskName.length > 20 ? "..." : ""}}
+            </span>
+
+            <!-- Delete Task -->
+            <button type="button" class="btn btn-sm btn-danger pull-right" style="margin-left:5px;">
+                <span class="glyphicon glyphicon-trash"></span>
+            </button>
+
+            <!-- Edit Task -->
+            <a href="#" class="btn btn-sm btn-default pull-right">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+        </li>
+    </ul>
+</div>
