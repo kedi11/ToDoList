@@ -17,6 +17,9 @@ angular.module("controller", [])
         TasksService.toggleComplete(task);
     }
     
+    $scope.deleteTask = function(task){
+        TasksService.deleteTask(task);
+    }
 }])
 .service("UsersService", function(){
     var usersService = {};
@@ -73,6 +76,15 @@ angular.module("controller", [])
     tasksService.toggleComplete = function(task){
         if (task) {
             task.isComplete = !task.isComplete;
+        }
+    }
+
+    tasksService.deleteTask = function(task){
+        var idx = tasksService.Tasks.indexOf(task);
+        var wasFound = (idx != -1);
+        if (wasFound) {
+            //console.log("Deleting taskID: " + task.taskID);
+            tasksService.Tasks.splice(idx, 1);
         }
     }
 
